@@ -14,7 +14,7 @@ pipeline {
                 }
             }
         }
-        stage("build") {
+        stage("deploy") {
             steps {
                 echo 'executing node app'
                 nodejs('Node_14.9.0') {
