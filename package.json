@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel ./index.js src -d lib",
     "start-dev": "nodemon --exec babel-node index.js",
-    "serve": "node dist/server.js"
+    "serve": "node lib/index.js"
   },
   "repository": {
     "type": "git",
