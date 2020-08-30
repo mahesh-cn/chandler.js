@@ -1,11 +1,24 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'node:6-alpine'
+            args '-p 3000:3000'
+        }
+    }
     stages {
-        stage("run frontend") {
+        stage("build") {
             steps {
                 echo 'executing node app'
                 nodejs('Node_14.9.0') {
                     sh 'yarn install'
+                }
+            }
+        }
+        stage("build") {
+            steps {
+                echo 'executing node app'
+                nodejs('Node_14.9.0') {
+                    sh 'npm run serve'
                 }
             }
         }
